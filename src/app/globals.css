@@ -6,6 +6,36 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+    --third-color: 203, 157, 116;
+    --secondary-color: 127, 84, 51;
+    --primary-color: 255, 255, 236;
+    --fourth-color: 101, 69, 31;
+
+}
+[data-theme= 'light'] {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+    --third-color: 203, 157, 116;
+    --secondary-color: 127, 84, 51;
+    --primary-color: 255, 255, 236;
+    --fourth-color: 101, 69, 31;
+  
+
+}
+
+[data-theme= 'dark'] {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 0, 0;
+  --fifth-color: 21, 0, 80;
+  --fourth-color: 255, 255, 255;
+  --third-color: 63, 0, 113;
+  --secondary-color: 97, 0, 148;
+  /* --primary-color: 0,0,0; */
+  --primary-color: 14, 12, 20;
+
+  
 }
 
 @media (prefers-color-scheme: dark) {
@@ -13,8 +43,22 @@
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
+    --fifth-color: 21, 0, 80;
+    --fourth-color: 255, 255, 255;
+    --third-color: 63, 0, 113;
+    --secondary-color: 97, 0, 148;
+    --primary-color: 14, 12, 20;
+    
   }
 }
+
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
 
 body {
   color: rgb(var(--foreground-rgb));
@@ -23,11 +67,5 @@ body {
       transparent,
       rgb(var(--background-end-rgb))
     )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+    rgb(var(--primary-color));
 }

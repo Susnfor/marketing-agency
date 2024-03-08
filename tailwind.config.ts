@@ -25,6 +25,7 @@ const config: Config = {
         'spin-slow': 'spin 1s linear',
         'menu-open': 'menu-open 0.5s ease-in-out',
         'menu-close': 'menu-close 0.5s ease-in-out',
+        'infinite-scroll': 'infinite-scroll 25s linear infinite',
       },
       keyframes: {
         'spin-slow': {
@@ -39,6 +40,10 @@ const config: Config = {
           '0%': { transform: 'translateY(0)' },
           '100%': { transform: 'translateY(-100%)' },
         },
+        'infinite-scroll': {
+          from: { transform: 'translateX(0)' },
+          to: { transform: 'translateX(-100%)' },
+        }
       },
 
     },

@@ -8,8 +8,8 @@ import e4 from '../assets/e4.jpg'
 
 export const Expertise = () => {
   return (
-    <div>
-      <div className='py-48'>
+    <div className='min-h-screen flex justify-center items-center'>
+      <div className=''>
         <div className='text-center '>
       <h1 className='font-bold text-center bg-secondary bg-gradient-to-r from-sky-500 to-indigo-500 bg-clip-text text-transparent text-4xl pb-4'>Our Expertise</h1>
       <p className='text-extra lg:px-80 px-10'>Vivamus a ligula ut velit placerat egestas at id leo. Nulla ac volutpat nunc. Suspendisse ut magna porttitor, sollicitudin ligula at, molestie dolor.</p>

@@ -6,7 +6,7 @@ export const pricing = [
       id: "0",
       title: "Basic",
       description: "AI chatbot, personalized recommendations",
-      price: "0",
+      price: "5.99",
       features: [
         "An AI chatbot that can understand your queries",
         "Personalized recommendations based on your preferences",
@@ -28,7 +28,7 @@ export const pricing = [
       id: "2",
       title: "Enterprise",
       description: "Custom AI chatbot, advanced analytics, dedicated account",
-      price: null,
+      price: "19.99",
       features: [
         "An AI chatbot that can understand your queries",
         "Personalized recommendations based on your preferences",
@@ -46,9 +46,15 @@ export const Pricing = () => {
             <h1 className='text-3xl text-extra '>Pay once, use forever</h1>
         </div>
         <div className='flex gap-5 px-20 justify-evenly flex-col sm:flex-row'>
-            <PriceBox />
-            <PriceBox />
-            <PriceBox />
+          {
+            pricing.map((price) => (
+              <PriceBox key={price.id} plan={price.title} price={price.price} />
+            ))
+
+          }
+            {/* <PriceBox plan="Basic" />
+            <PriceBox plan="Premium" />
+            <PriceBox plan= "Enterprise"/> */}
         </div>
     </div>
   )

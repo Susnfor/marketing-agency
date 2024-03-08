@@ -20,6 +20,8 @@ const logoVariants = {
     }
 }
 
+
+
 export const CompanyLogos = (img: any) => {
 
 
@@ -27,19 +29,19 @@ export const CompanyLogos = (img: any) => {
     <div>
         <motion.div initial="initial" whileInView="animate" className='text-center text-secondary'>
             <h4  className="font-bold text-gray-400 text-base pb-4">Companies We Work With</h4>
-            <ul className='flex justify-evenly items-center flex-1 '>
+            <motion.ul className='flex justify-evenly items-center flex-1 ' variants={logoVariants}  initial="initial" whileInView="animate" >
                 {
                     companyLogos.map((item, index) => (
-                        <motion.li 
-                        variants={logoVariants}
+                        <li 
+                        
                         key={index} className='w-1/6 p-2'>
                             <Image src={item} alt="company logo" height={100} width={100}/>
-                        </motion.li>
+                        </li>
                     ))
 
                 }
 
-            </ul>
+            </motion.ul>
         </motion.div>
     </div>
   )

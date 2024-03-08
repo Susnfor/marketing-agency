@@ -1,6 +1,7 @@
-import React from 'react'
+import {useRef} from 'react'
 import Image from 'next/image'
-import {motion} from 'framer-motion'
+import {motion, useTransform, useScroll, easeInOut} from 'framer-motion'
+
 
 type ShowcaseCardProps = {
     source: any,
@@ -16,17 +17,19 @@ type CardProps = {
 const cardVariants = {
   initial: {
       opacity: 0,
-      y: 50,
+      // x:-300,
   },
   animate: {
       opacity: 1,
-      y: 0,
+      // x: 0,
       transition: {
           duration: 1,
           staggerChildren: 0.5
       }
   }
+  
 }
+
 
 export const LeftCard = ({source, phrase}:CardProps) => {
   return (
@@ -59,9 +62,25 @@ export const RightCard = ({source, phrase}: CardProps) => {
 }
 
 export const ShowcaseCard = ({source, phrase, left}: ShowcaseCardProps) => {
+  const ref=useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    // offset: ["start start", "end start"],
+    offset: ["end end", "start end"],
+
+
+  });
+  // const y = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+  const leftAnimate = useTransform(scrollYProgress, [0, 1], ["0%", "-100%"], {ease: easeInOut});
+  const rightAnimate = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+  const opacityAnimate = useTransform(scrollYProgress, [0, 1], [1, 0]);
+
   return (
-    <div className='w-full h-80  text-extra  my-10 relative'>
-        <div id='image-text' className='flex justify-between lg:mx-32 rounded-lg relative px-2 bg-third/10 border border-6 outline-4 outline-indigo-500 border-indigo-500 '>
+    <div className='w-full h-80  text-extra  my-10 relative' ref={ref}>
+        <motion.div 
+        style={left ? {x: leftAnimate, opacity: opacityAnimate} : {x: rightAnimate, opacity: opacityAnimate} }
+        // variants={cardVariants} initial='initial' whileInView='animate'
+         id='image-text' className='flex justify-between lg:mx-32 rounded-lg relative px-2 bg-third/10 border border-6 outline-4 outline-indigo-500 border-indigo-500 '>
 
             {
                 left ? (
@@ -79,7 +98,7 @@ export const ShowcaseCard = ({source, phrase, left}: ShowcaseCardProps) => {
             }
 
 
-        </div>
+        </motion.div>
     </div>
   )
 }

@@ -1,15 +1,15 @@
 import React from 'react'
 import { CheckBadgeIcon } from '@heroicons/react/24/outline'
 
-export const PriceBox = () => {
+export const PriceBox = ({plan, price}: any) => {
   return (
     <div className='h-full border border-6 rounded-3xl p-3 outline-4 outline-indigo-500 border-indigo-500 backdrop-blur-md bg-third/10 '>
         <div className='pb-8'>
-            <h1 className='text-4xl text-secondary font-bold'>Basic</h1>
+            <h1 className='text-4xl text-secondary font-bold'>{plan}</h1>
             <p className='text-gray-600 text-base'>AI chatbot, personalized recommendations</p>
         </div>
         <div className='pb-8'>
-            <h1 className='text-6xl text-fourth font-bold outline-4 outline-indigo-500'>$9.99</h1>
+            <h1 className='text-6xl text-fourth font-bold outline-4 outline-indigo-500'>£{price}</h1>
         </div>
         <div className='flex justify-center items-center'>
         <div className='relative w-10/12 py-[1px] bg-gradient-to-r from-sky-500 to-indigo-500 flex justify-center '>

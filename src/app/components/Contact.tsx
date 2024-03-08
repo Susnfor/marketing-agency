@@ -7,7 +7,7 @@ Contact = () => {
   return (
     <div className='h-screen w-full flex justify-center '>
         <div className='h-full w-9/12 flex items-center flex-col sm:flex-row'>
-        <div className=' relative  w-96 h-96'>
+        <div className=' relative  sm:w-96 sm:h-96 h-72 w-72  '>
             <Image src={contact} alt="contact" fill style={{objectFit: "cover", borderRadius: "30px"}}/>
         </div>
     <div className='h-4/6 border rounded-3xl px-12 outline-4 outline-indigo-500 border-indigo-500 backdrop-blur-md bg-third/10 text-extra mx-4  flex flex-col justify-center'>

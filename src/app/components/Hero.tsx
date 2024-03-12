@@ -41,7 +41,7 @@ export const Hero = ({isDark}: any) => {
 
   return (
     <div className="text-secondary">
-        <div id='main-hero' className="  h-screen w-full " ref={parallaxRef}
+        <div id='main-hero' className="  h-screen w-full overflow" ref={parallaxRef}
         // style={backgroundImageStyle}
         >
           
@@ -117,7 +117,7 @@ export const Hero = ({isDark}: any) => {
             
     <div id='bg' className={`${isDark  ? 'hidden' : 'visible'} overflow-hidden`}>
       <MouseParallax isAbsolutelyPositioned strength={0.1}>
-        <div className='top-0 w-full h-full absolute' >
+        <div className='top-0 left-0 right-0 w-full h-full absolute overflow-x-hidden' >
           <Image src={black} alt="hero image" fill={true} style={{objectFit: "cover"}}/>
         </div>
         </MouseParallax>
@@ -126,7 +126,7 @@ export const Hero = ({isDark}: any) => {
         </div>
         <div id='bg' className={`${!isDark ? 'hidden' : 'visible'} overflow-hidden`}>
       <MouseParallax isAbsolutelyPositioned strength={0.1}>
-        <div className='top-0 w-full h-full absolute' >
+        <div className='top-0 left-0 right-0 w-full h-full absolute overflow-x-hidden' >
           <Image src={white} alt="hero image" fill={true} style={{objectFit: "cover"}}/>
         </div>
         </MouseParallax>

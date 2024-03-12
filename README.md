@@ -13,7 +13,7 @@ Access the demo [here](https://marketing-agency-six.vercel.app/)
 
 ## Screenshots
 
-![screencapture](https://github.com/Susnfor/marketing-agency/assets/97429786/c12b0379-00e7-4418-853b-233640779284)
+![screencapture](https://github.com/Susnfor/marketing-agency/assets/97429786/419e5b1f-fc62-4a46-aab4-2c3c97233fdd)
 
 ## Technologies
 I used `next.js`, `tailwind css`, `react-just-parallax` and `typescript` 
